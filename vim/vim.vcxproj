@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9292423C-DA1E-4D25-A682-DFAD5DEBDF19}</ProjectGuid>
+    <ProjectGuid>{E2DFC0B5-C535-4FA1-BE2A-657BA968557D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>vimvs</RootNamespace>
+    <RootNamespace>vim</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -150,7 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="vim-vs.cpp" />
+    <ClCompile Include="vim.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
