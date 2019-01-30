@@ -74,6 +74,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)vimsrc\src;$(SolutionDir)vimsrc\src\libvterm\include;$(SolutionDir)vimsrc\src\proto;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -100,7 +101,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;NDEBUG;WINVER=0x0501;HAVE_STDINT_H;_WIN32_WINNT=0x0501;_WIN32_WINNT=0x0600;FEAT_JOB_CHANNEL;DYNAMIC_GETTEXT;IS_COMBINING_FUNCTION=utf_iscomposing_uint;DYNAMIC_ICONV;HAVE_PATHDEF;VSNPRINTF=vim_vsnprintf;FEAT_HUGE;INLINE="";WCWIDTH_FUNCTION=utf_uint2cells;_CRT_SECURE_NO_WARNINGS;USE_DYNFILEID;FEAT_GETTEXT;FEAT_CSCOPE;FEAT_TERMINAL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,12 +146,193 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\vimsrc\src\arabic.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="vim.cpp" />
+    <ClCompile Include="..\vimsrc\src\arabic.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\beval.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\blowfish.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\buffer.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\channel.c" />
+    <ClCompile Include="..\vimsrc\src\charset.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\crypt.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\crypt_zip.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\dict.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\diff.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\digraph.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\edit.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\eval.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\evalfunc.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\ex_cmds.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\ex_cmds2.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\ex_docmd.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\ex_eval.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\ex_getln.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\farsi.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\fileio.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\fold.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\getchar.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\hardcopy.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\hashtab.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\if_cscope.c" />
+    <ClCompile Include="..\vimsrc\src\iscygpty.c" />
+    <ClCompile Include="..\vimsrc\src\json.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\encoding.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\keyboard.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\mouse.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\parser.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\pen.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\screen.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\state.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\unicode.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\vterm.c" />
+    <ClCompile Include="..\vimsrc\src\list.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\mark.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\mbyte.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\memfile.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\memline.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\menu.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\message.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\misc1.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\misc2.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\move.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\normal.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\ObjCAMD64\pathdef.c" />
+    <ClCompile Include="..\vimsrc\src\ops.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\option.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\os_mswin.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\terminal.c" />
+    <ClCompile Include="..\vimsrc\src\version.c" />
+    <ClCompile Include="..\vimsrc\src\winclip.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\os_win32.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\popupmnu.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\quickfix.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\regexp.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\screen.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\search.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\sha256.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\spell.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\spellfile.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\syntax.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\tag.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\term.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\ui.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\undo.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\userfunc.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vimsrc\src\window.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

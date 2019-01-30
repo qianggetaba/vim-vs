@@ -240,3 +240,14 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/vimsrc/src/GvimExt/gvimext.res
+/vimsrc/src/GvimExt/gvimext.lib
+/vimsrc/src/GvimExt/gvimext.exp
+/vimsrc/src/GvimExt/gvimext.dll
+/vimsrc/src/tee/tee.exe
+/vimsrc/src/xxd/xxd.exe
+/vimsrc/src/install.exe
+/vimsrc/src/_.swp
+/vimsrc/src/vimrun.exe
+/vimsrc/src/vim.exe
+/vimsrc/src/uninstal.exe

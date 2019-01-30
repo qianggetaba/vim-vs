@@ -1133,7 +1133,7 @@ static int		prt_number_width;
 static int		prt_left_margin;
 static int		prt_right_margin;
 static int		prt_top_margin;
-static char_u		szAppName[] = TEXT("VIM");
+static char_u		szAppName[] = "VIM";
 static HWND		hDlgPrint;
 static int		*bUserAbort = NULL;
 static char_u		*prt_name = NULL;
@@ -2759,7 +2759,7 @@ quality_id2name(DWORD id)
     return qp->name;
 }
 
-static const LOGFONT s_lfDefault =
+const LOGFONT s_lfDefault =
 {
     -12, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
     OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,

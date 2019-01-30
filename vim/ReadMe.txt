@@ -1,30 +1,21 @@
-﻿========================================================================
-    控制台应用程序：vim 项目概述
-========================================================================
+﻿vim console
 
-应用程序向导已为您创建了此 vim 应用程序。
+vimsrc/src/INSTALLpc.txt
 
-本文件概要介绍组成 vim 应用程序的每个文件的内容。
+open open visual studio 2015 x64 native tools command prompt
+nmake -f Make_mvc.mak
 
+the make will generate some source file like pathdef.c, vim.res etc...,
+and we can find out some makefile logic through the make output,
+and the defined variable from the compile parameter -D which determine the real code logic.
 
-vim.vcxproj
-    这是使用应用程序向导生成的 VC++ 项目的主项目文件，其中包含生成该文件的 Visual C++ 的版本信息，以及有关使用应用程序向导选择的平台、配置和项目功能的信息。
+from
+all:	$(VIM).exe  ; from makefile
+link  ... -out:vim.exe  ; from output
+get the need source code
 
-vim.vcxproj.filters
-    这是使用“应用程序向导”生成的 VC++ 项目筛选器文件。它包含有关项目文件与筛选器之间的关联信息。在 IDE 中，通过这种关联，在特定节点下以分组形式显示具有相似扩展名的文件。例如，“.cpp”文件与“源文件”筛选器关联。
+include path:
+$(SolutionDir)vimsrc\src; $(SolutionDir)vimsrc\src\proto; $(SolutionDir)vimsrc\src\libvterm\include
 
-vim.cpp
-    这是主应用程序源文件。
-
-/////////////////////////////////////////////////////////////////////////////
-其他标准文件:
-
-StdAfx.h, StdAfx.cpp
-    这些文件用于生成名为 vim.pch 的预编译头 (PCH) 文件和名为 StdAfx.obj 的预编译类型文件。
-
-/////////////////////////////////////////////////////////////////////////////
-其他注释:
-
-应用程序向导使用“TODO:”注释来指示应添加或自定义的源代码部分。
-
-/////////////////////////////////////////////////////////////////////////////
+c preprocessor #define variable arguments:
+NDEBUG ;WINVER=0x0501 ;HAVE_STDINT_H ;_WIN32_WINNT=0x0501 ;_WIN32_WINNT=0x0600 ;FEAT_JOB_CHANNEL ;DYNAMIC_GETTEXT ;IS_COMBINING_FUNCTION=utf_iscomposing_uint ;DYNAMIC_ICONV ;HAVE_PATHDEF ;VSNPRINTF=vim_vsnprintf ;FEAT_HUGE ;INLINE="" ;WCWIDTH_FUNCTION=utf_uint2cells ;_CRT_SECURE_NO_WARNINGS ;USE_DYNFILEID ;FEAT_GETTEXT ;FEAT_CSCOPE ;FEAT_TERMINAL ;WIN32 
