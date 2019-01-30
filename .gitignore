@@ -251,3 +251,5 @@ ModelManifest.xml
 /vimsrc/src/vimrun.exe
 /vimsrc/src/vim.exe
 /vimsrc/src/uninstal.exe
+/vimsrc/src/gvim.exe
+/vimsrc/src/ObjGXAMD64/vim.res
