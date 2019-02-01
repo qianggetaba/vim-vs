@@ -228,15 +228,33 @@
     <ClCompile Include="..\vimsrc\src\json.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\vimsrc\src\libvterm\src\encoding.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\keyboard.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\mouse.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\parser.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\pen.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\screen.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\state.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\unicode.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\vterm.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\encoding.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_encoding</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\keyboard.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_keyboard</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\mouse.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_mouse</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\parser.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_parser</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\pen.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_pen</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\screen.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_screen</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\state.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_state</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\unicode.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_unicode</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\vterm.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_vterm</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\vimsrc\src\list.c" />
   </ItemGroup>
   <ItemGroup>
