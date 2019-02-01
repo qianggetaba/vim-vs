@@ -101,11 +101,14 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;NDEBUG;WINVER=0x0501;HAVE_STDINT_H;_WIN32_WINNT=0x0501;_WIN32_WINNT=0x0600;FEAT_JOB_CHANNEL;DYNAMIC_GETTEXT;IS_COMBINING_FUNCTION=utf_iscomposing_uint;DYNAMIC_ICONV;HAVE_PATHDEF;VSNPRINTF=vim_vsnprintf;FEAT_HUGE;INLINE="";WCWIDTH_FUNCTION=utf_uint2cells;_CRT_SECURE_NO_WARNINGS;USE_DYNFILEID;FEAT_GETTEXT;FEAT_CSCOPE;FEAT_TERMINAL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;NDEBUG;WINVER=0x0501;HAVE_STDINT_H;_WIN32_WINNT=0x0501;_WIN32_WINNT=0x0600;FEAT_JOB_CHANNEL;DYNAMIC_GETTEXT;IS_COMBINING_FUNCTION=utf_iscomposing_uint;DYNAMIC_ICONV;HAVE_PATHDEF;VSNPRINTF=vim_vsnprintf;FEAT_HUGE;INLINE="";WCWIDTH_FUNCTION=utf_uint2cells;_CRT_SECURE_NO_WARNINGS;USE_DYNFILEID;FEAT_GETTEXT;FEAT_CSCOPE;FEAT_TERMINAL;WIN32;USE_INLINE;INLINE=inline;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>WSock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -298,7 +301,10 @@
     <ClCompile Include="..\vimsrc\src\option.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\vimsrc\src\os_mswin.c" />
+    <ClCompile Include="..\vimsrc\src\os_mswin.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">-c /W3 /nologo  -I. -Iproto -DHAVE_PATHDEF -DWIN32  -DFEAT_CSCOPE -DFEAT_TERMINAL  -DFEAT_JOB_CHANNEL      -DWINVER=0x0501 -D_WIN32_WINNT=0x0501 /MP -DHAVE_STDINT_H /Ox /GL -DNDEBUG  /Zl /MT -DDYNAMIC_ICONV -DDYNAMIC_GETTEXT -DFEAT_HUGE  /Zi</AdditionalOptions>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\vimsrc\src\terminal.c" />

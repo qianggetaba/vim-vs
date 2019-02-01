@@ -18,3 +18,7 @@ devenv /DebugExe vim.exe  ; open vs prompt, type command to debug vim.exe compil
 
 same name file: on file right click, property--c/c++ -- output file--object file name-- like: $(IntDir)term_parser
 
+/rtc1 /O2: vim project right click, property--c/c++ -- code generate -- basic runtime check -- default
+
+output compile parameter: tools--Options > Projects and Solutions > Build and Run > MSBuild project build output verbosity -- specific
+
