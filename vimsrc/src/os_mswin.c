@@ -2759,7 +2759,7 @@ quality_id2name(DWORD id)
     return qp->name;
 }
 
-const LOGFONT s_lfDefault =
+static const LOGFONT s_lfDefault =
 {
     -12, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
     OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
