@@ -12,3 +12,6 @@ project add source file according to the makefile vimsrc/src/Make_mvc.mak descri
 vim: https://www.vim.org/
 vim github: https://github.com/vim/vim
 vim-8.1.tar.bz2: ftp://ftp.vim.org/pub/vim/unix/vim-8.1.tar.bz2
+
+
+devenv /DebugExe vim.exe  ; open vs prompt, type command to debug vim.exe compiled by nmake, right click vim on the left, debug--step debug, cant see the variable, but the code logic in file

@@ -27,6 +27,9 @@
     <ClInclude Include="..\vimsrc\src\arabic.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\vimsrc\src\vim.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\vimsrc\src\arabic.c">

@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\vimsrc\src\arabic.h" />
+    <ClInclude Include="..\vimsrc\src\vim.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\vimsrc\src\arabic.c" />
