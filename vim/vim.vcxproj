@@ -378,6 +378,9 @@
   <ItemGroup>
     <ClCompile Include="..\vimsrc\src\window.c" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\vimsrc\src\ObjCAMD64\vim.res" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

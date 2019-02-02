@@ -362,4 +362,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\vimsrc\src\ObjCAMD64\vim.res">
+      <Filter>资源文件</Filter>
+    </Resource>
+  </ItemGroup>
 </Project>

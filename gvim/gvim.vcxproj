@@ -75,6 +75,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)vimsrc\src;$(SolutionDir)vimsrc\src\proto;$(SolutionDir)vimsrc\src\libvterm\include;$(SolutionDir)vimsrc\src\xpm\include;$(IncludePath)</IncludePath>
+    <EmbedManifest>false</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -363,6 +364,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\vimsrc\src\window.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\vimsrc\src\ObjGXAMD64\vim.res" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

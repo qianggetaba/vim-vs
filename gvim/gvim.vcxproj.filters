@@ -291,4 +291,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\vimsrc\src\ObjGXAMD64\vim.res">
+      <Filter>资源文件</Filter>
+    </Resource>
+  </ItemGroup>
 </Project>
