@@ -129,9 +129,6 @@
     <ClCompile Include="..\vimsrc\src\if_cscope.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\vimsrc\src\iscygpty.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\vimsrc\src\json.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -196,9 +193,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\vimsrc\src\normal.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\vimsrc\src\ObjCAMD64\pathdef.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\vimsrc\src\ops.c">
@@ -286,6 +280,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\vimsrc\src\xpm_w32.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\ObjGXAMD64\pathdef.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

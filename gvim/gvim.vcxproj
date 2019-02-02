@@ -42,7 +42,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -74,7 +74,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)vimsrc\src;$(SolutionDir)vimsrc\src\proto;$(SolutionDir)vimsrc\src\libvterm\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)vimsrc\src;$(SolutionDir)vimsrc\src\proto;$(SolutionDir)vimsrc\src\libvterm\include;$(SolutionDir)vimsrc\src\xpm\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -104,6 +104,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>WSock32.lib;Comctl32.lib;Version.lib;$(SolutionDir)vimsrc\src\xpm\x64\lib-vc14\libXpm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalManifestDependencies>%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -146,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\vimsrc\src\arabic.c" />
+    <ClCompile Include="..\vimsrc\src\ObjGXAMD64\pathdef.c" />
     <ClCompile Include="..\vimsrc\src\xpm_w32.c" />
   </ItemGroup>
   <ItemGroup>
@@ -224,19 +227,36 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\vimsrc\src\if_cscope.c" />
-    <ClCompile Include="..\vimsrc\src\iscygpty.c" />
     <ClCompile Include="..\vimsrc\src\json.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\vimsrc\src\libvterm\src\encoding.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\keyboard.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\mouse.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\parser.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\pen.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\screen.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\state.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\unicode.c" />
-    <ClCompile Include="..\vimsrc\src\libvterm\src\vterm.c" />
+    <ClCompile Include="..\vimsrc\src\libvterm\src\encoding.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_encoding</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\keyboard.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_keyboard</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\mouse.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_mouse</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\parser.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_parser</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\pen.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_pen</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\screen.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_screen</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\state.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_state</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\unicode.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_unicode</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\vimsrc\src\libvterm\src\vterm.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)term_vterm</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\vimsrc\src\list.c" />
   </ItemGroup>
   <ItemGroup>
@@ -274,7 +294,6 @@
     <ClCompile Include="..\vimsrc\src\normal.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\vimsrc\src\ObjCAMD64\pathdef.c" />
     <ClCompile Include="..\vimsrc\src\ops.c" />
   </ItemGroup>
   <ItemGroup>
@@ -284,8 +303,7 @@
     <ClCompile Include="..\vimsrc\src\os_mswin.c">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">-c /W3 /nologo  -I. -Iproto -DHAVE_PATHDEF -DWIN32  -DFEAT_CSCOPE -DFEAT_TERMINAL  -DFEAT_JOB_CHANNEL      -DWINVER=0x0501 -D_WIN32_WINNT=0x0501 /MP -DHAVE_STDINT_H /Ox  -DNDEBUG  /Zl /MT -DDYNAMIC_ICONV -DDYNAMIC_GETTEXT -DFEAT_HUGE  /Zi</AdditionalOptions>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ProgramDatabase</DebugInformationFormat>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</MinimalRebuild>
       <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExceptionHandling>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Default</BasicRuntimeChecks>

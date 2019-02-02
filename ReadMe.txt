@@ -22,3 +22,6 @@ same name file: on file right click, property--c/c++ -- output file--object file
 
 output compile parameter: tools--Options > Projects and Solutions > Build and Run > MSBuild project build output verbosity -- specific
 
+add DEBUG=yes to nmake, generate debug in obj
+
+dumpbin /SYMBOLS os_win32.obj | findstr mch_settmode ; to check whether the obj has the function
